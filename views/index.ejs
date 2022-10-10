@@ -1,0 +1,54 @@
+<%- include('partials/head') %> 
+
+<%- include('partials/navbar') %>
+
+<div class="container mt-2 pt-2">
+  <h2 class="mb-3 text-center">Show All Movies</h2>
+  <form action="/movies/insert" method="GET">
+    <div class="addmovie">
+		<input type="submit" 
+			   value="Add New Movie" 
+			   class="btn btn-success" />
+	</div>
+  </form>
+</div>
+
+<div class="container mt-3 pt-3">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Year Made</th>
+      <th>Running Time</th>
+      <th>Category</th>
+      <th>Rating</th>
+    </tr>
+
+    <% result.forEach(function(item) { %>
+    <tr>
+      <td></td>
+      <td><%= item.movie_id %></td>
+      <td><%= item.title %></td>
+      <td><%= item.yearmade %></td>
+      <td><%= item.runningtime %></td>
+      <td><%= item.category %></td>
+      <td><%= item.rating %></td>
+      <!--<td></td>-->
+      <td>
+        <form action="/movies/delete" method="POST">
+          <input type="hidden" value="<%= item.movie_id %>" name="id" />
+          <input type="submit" value="delete" class="btn btn-danger" />
+        </form>
+      </td>
+      <td>
+        <form action="/movies/edit" method="GET">
+          <input type="hidden" value="<%= item.movie_id %>" name="id" />
+          <input type="submit" value="edit" class="btn btn-primary" />
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </table>
+</div>
+
+<%- include('partials/foot') %>

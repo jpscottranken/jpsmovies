@@ -1,0 +1,51 @@
+<%- include('partials/head') %>
+
+<%- include('partials/navbar') %>
+
+<div class="container mt-2 py-2">
+    <h2 class="mb-3 text-center">Edit Existing Movie</h2>
+
+    <form method="POST" action="/movies/edit">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1"
+                class="form-label">ID</label>
+            <input type="number" name="id" class="form-control"
+            id="exampleFormControlInput1" placeholder="ID #">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1"
+                class="form-label">Title</label>
+            <input type="text" name="title" class="form-control"
+            id="exampleFormControlInput1" placeholder="title">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput2"
+                class="form-label">Year Made</label>
+            <input type="number" name="yearmade" class="form-control"
+            id="exampleFormControlInput2" placeholder="Year Made">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput3"
+                class="form-label">Running Time</label>
+            <input type="number" name="runningtime" class="form-control"
+            id="exampleFormControlInput3" placeholder="Running Time">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput4"
+                class="form-label">Category</label>
+            <input type="text" name="category" class="form-control"
+            id="exampleFormControlInput4" placeholder="Category">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput5"
+                class="form-label">Rating</label>
+            <input type="text" name="rating" class="form-control"
+            id="exampleFormControlInput5" placeholder="rating">
+        </div>
+         <div class="mb-3">
+            <input type="submit" value="submit" class="btn btn-primary">
+        </div>
+    </form>
+</div>
+
+<%- include('partials/foot') %>
